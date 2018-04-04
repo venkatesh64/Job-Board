@@ -1,0 +1,37 @@
+<div class="heading">
+  <h1><%= t(".title") %></h1>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th><%= t(".date") %></th>
+      <th><%= t(".job_title") %></th>
+      <th><%= t(".poster") %></th>
+      <th><%= t(".category") %></th>
+      <th><%= t(".location") %></th>
+      <th><%= t(".status") %></th>
+      <th><%= t(".actions") %></th>
+  </thead>
+  <tbody>
+    <% @job_postings.each do |posting| %>
+      <tr class="job-posting-<%= posting.id %>">
+        <td class="posting-date"><%= ldate_time(posting.posted_at, format: :short) %></td>
+        <td class="posting-title"><%= posting.title %></td>
+        <td class="posting-poster"><%= posting.poster_name %></td>
+        <td class="posting-category"><%= posting.category_name %></td>
+        <td class="posting-location"><%= posting.location_city %></td>
+        <td class="posting-status"><%= posting.status %></td>
+        <td class="posting-actions">
+          <%= link_to t(".action.view"), posting %>
+          <%= link_to t(".action.edit"), edit_job_posting_path(posting) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="actions">
+  <%= link_to t(".action.new_job"), new_job_posting_path, class: "btn btn-primary" %>
+  <%= link_to t(".action.new_location"), new_location_path, class: "btn btn-default" %>
+</div>

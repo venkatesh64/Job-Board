@@ -1,0 +1,24 @@
+<%= render "posting_heading" %>
+
+<div class="job-posting">
+  <dl class="dl-horizontal">
+    <dt><%= t(".date") %></dt>
+    <dd class="posting-date"><%= ldate_time(@job_posting.posted_at, format: :short) %></dd>
+    <dt><%= t(".title") %></dt>
+    <dd class="posting-title"><%= @job_posting.title %></dd>
+    <dt><%= t(".poster") %></dt>
+    <dd class="posting-poster"><%= @job_posting.poster_name %></dd>
+    <dt><%= t(".category") %></dt>
+    <dd class="posting-category"><%= @job_posting.category_name %></dd>
+    <dt><%= t(".location") %></dt>
+    <dd class="posting-location"><%= simple_format(@job_posting.location_full_address) %></dd>
+    <dt><%= t(".status") %></dt>
+    <dd class="posting-status"><%= @job_posting.status %></dd>
+    <dt><%= t(".description") %></dt>
+    <dd class="posting-description"><%= @job_posting.description %></dd>
+  </dl>
+</div>
+
+<div class="actions">
+  <%= link_to t(".action.edit"), edit_job_posting_path(@job_posting), class: "btn btn-primary" %>
+</div>

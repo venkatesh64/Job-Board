@@ -1,0 +1,43 @@
+<% if @location.errors.any? %>
+  <div id="error_explanation">
+    <ul>
+      <% @location.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_with model: @location, local: true do |form| %>
+  <div class="field_with_errors">
+    <%= form.label(:name, for: :location_name) %>
+    <%= form.text_field(:name, id: :location_name, class: "form-control") %>
+  </div>
+
+  <div class="field_with_errors">
+    <%= form.label(:street_address_1, for: :location_street_address_1) %>
+    <%= form.text_field(:street_address_1, id: :location_street_address_1, class: "form-control") %>
+  </div>
+
+  <div class="field_with_errors">
+    <%= form.label(:street_address_2, for: :location_street_address_2) %>
+    <%= form.text_field(:street_address_2, id: :location_street_address_2, class: "form-control") %>
+  </div>
+
+  <div class="field_with_errors">
+    <%= form.label(:city, for: :location_city) %>
+    <%= form.text_field(:city, id: :location_city, class: "form-control") %>
+  </div>
+
+  <div class="field_with_errors">
+    <%= form.label(:state, for: :location_state) %>
+    <%= form.text_field(:state, id: :location_state, class: "form-control") %>
+  </div>
+
+  <div class="field_with_errors">
+    <%= form.label(:zip_code, for: :location_zip_code) %>
+    <%= form.text_field(:zip_code, id: :location_zip_code, class: "form-control") %>
+  </div>
+
+  <%= form.submit action_name, class: "btn btn-default action-btn" %>
+<% end %>

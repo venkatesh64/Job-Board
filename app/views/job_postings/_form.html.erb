@@ -1,0 +1,43 @@
+<% if @job_posting.errors.any? %>
+  <div id="error_explanation">
+    <ul>
+      <% @job_posting.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_with model: @job_posting, local: true do |form| %>
+  <div class="field_with_errors">
+    <%= form.label(:title, for: :job_posting_title) %>
+    <%= form.text_field(:title, id: :job_posting_title, class: "form-control") %>
+  </div>
+
+  <div class="field_with_errors">
+    <%= form.label(:job_poster_id, for: :job_posting_job_poster) %>
+    <%= form.select(:job_poster_id, JobPoster.all.map { |poster| [poster.full_name.titleize, poster.id] }, { prompt: t(".poster_prompt") }, { id: :job_posting_job_poster, class: "form-control" }) %>
+  </div>
+
+  <div class="field_with_errors">
+    <%= form.label(:category_id, for: :job_posting_category) %>
+    <%= form.select(:category_id, Category.all.map { |category| [category.name.titleize, category.id] }, { prompt: t(".category_prompt") }, { id: :job_posting_category, class: "form-control" }) %>
+  </div>
+
+  <div class="field_with_errors">
+    <%= form.label(:location_id, for: :job_posting_location) %>
+    <%= form.select(:location_id, Location.all.map { |location| [location.name, location.id] }, { prompt: t(".location_prompt") }, { id: :job_posting_location, class: "form-control" }) %>
+  </div>
+
+  <div class="field_with_errors">
+    <%= form.label(:status, for: :job_posting_status) %>
+    <%= form.select(:status, JobPosting.statuses.keys.map { |status| [status.titleize, status] }, { }, { id: :job_posting_status, class: "form-control" }) %>
+  </div>
+
+  <div class="field_with_errors">
+    <%= form.label :description, for: :job_posting_description %>
+    <%= form.text_area(:description, { rows: "3", id: :job_posting_description, class: "form-control" }) %>
+  </div>
+
+  <%= form.submit action_name, class: "btn btn-default action-btn" %>
+<% end %>

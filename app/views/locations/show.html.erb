@@ -1,0 +1,18 @@
+<%= render "location_heading" %>
+
+<div class="location">
+  <dl class="dl-horizontal">
+    <dt><%= t(".name") %></dt>
+    <dd class="location-name"><%= @location.name %></dd>
+    <dt><%= t(".street_address_1") %></dt>
+    <dd class="location-street-address-1"><%= @location.street_address_1 %></dd>
+    <dt><%= t(".street_address_2") %></dt>
+    <dd class="location-street-address-2"><%= @location.street_address_2 %></dd>
+    <dt><%= t(".city") %></dt>
+    <dd class="location-city"><%= @location.city %></dd>
+    <dt><%= t(".state") %></dt>
+    <dd class="location-state"><%= @location.state %></dd>
+    <dt><%= t(".zip_code") %></dt>
+    <dd class="location-zip-code"><%= @location.zip_code %></dd>
+  </dl>
+</div>

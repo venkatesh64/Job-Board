@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+        <style>
+/*--------------------------------------------------------------------------------------------- * Copyright (c) Microsoft Corporation. All rights reserved. * Licensed under the MIT License. See License.txt in the project root for license information. *--------------------------------------------------------------------------------------------*/ body { font-family: "Segoe WPC", "Segoe UI", "SFUIText-Light", "HelveticaNeue-Light", sans-serif, "Droid Sans Fallback"; font-size: 14px; padding: 0 12px; line-height: 22px; word-wrap: break-word; } body.scrollBeyondLastLine { margin-bottom: calc(100vh - 22px); } body.showEditorSelection .code-line { position: relative; } body.showEditorSelection .code-active-line:before, body.showEditorSelection .code-line:hover:before { content: ""; display: block; position: absolute; top: 0; left: -12px; height: 100%; } body.showEditorSelection li.code-active-line:before, body.showEditorSelection li.code-line:hover:before { left: -30px; } .vscode-light.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(0, 0, 0, 0.15); } .vscode-light.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(0, 0, 0, 0.40); } .vscode-dark.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(255, 255, 255, 0.4); } .vscode-dark.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(255, 255, 255, 0.60); } .vscode-high-contrast.showEditorSelection .code-active-line:before { border-left: 3px solid rgba(255, 160, 0, 0.7); } .vscode-high-contrast.showEditorSelection .code-line:hover:before { border-left: 3px solid rgba(255, 160, 0, 1); } img { max-width: 100%; max-height: 100%; } a { color: #4080D0; text-decoration: none; } a:focus, input:focus, select:focus, textarea:focus { outline: 1px solid -webkit-focus-ring-color; outline-offset: -1px; } hr { border: 0; height: 2px; border-bottom: 2px solid; } h1 { padding-bottom: 0.3em; line-height: 1.2; border-bottom-width: 1px; border-bottom-style: solid; } h1, h2, h3 { font-weight: normal; } h1 code, h2 code, h3 code, h4 code, h5 code, h6 code { font-size: inherit; line-height: auto; } a:hover { color: #4080D0; text-decoration: underline; } table { border-collapse: collapse; } table > thead > tr > th { text-align: left; border-bottom: 1px solid; } table > thead > tr > th, table > thead > tr > td, table > tbody > tr > th, table > tbody > tr > td { padding: 5px 10px; } table > tbody > tr + tr > td { border-top: 1px solid; } blockquote { margin: 0 7px 0 5px; padding: 0 16px 0 10px; border-left: 5px solid; } code { font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback"; font-size: 14px; line-height: 19px; } body.wordWrap pre { white-space: pre-wrap; } .mac code { font-size: 12px; line-height: 18px; } code > div { padding: 16px; border-radius: 3px; overflow: auto; } /** Theming */ .vscode-light { color: rgb(30, 30, 30); } .vscode-dark { color: #DDD; } .vscode-high-contrast { color: white; } .vscode-light code { color: #A31515; } .vscode-dark code { color: #D7BA7D; } .vscode-light code > div { background-color: rgba(220, 220, 220, 0.4); } .vscode-dark code > div { background-color: rgba(10, 10, 10, 0.4); } .vscode-high-contrast code > div { background-color: rgb(0, 0, 0); } .vscode-high-contrast h1 { border-color: rgb(0, 0, 0); } .vscode-light table > thead > tr > th { border-color: rgba(0, 0, 0, 0.69); } .vscode-dark table > thead > tr > th { border-color: rgba(255, 255, 255, 0.69); } .vscode-light h1, .vscode-light hr, .vscode-light table > tbody > tr + tr > td { border-color: rgba(0, 0, 0, 0.18); } .vscode-dark h1, .vscode-dark hr, .vscode-dark table > tbody > tr + tr > td { border-color: rgba(255, 255, 255, 0.18); } .vscode-light blockquote, .vscode-dark blockquote { background: rgba(127, 127, 127, 0.1); border-color: rgba(0, 122, 204, 0.5); } .vscode-high-contrast blockquote { background: transparent; border-color: #fff; }
+</style>
+<style>
+/* Tomorrow Theme */ /* http://jmblog.github.com/color-themes-for-google-code-highlightjs */ /* Original theme - https://github.com/chriskempson/tomorrow-theme */ /* Tomorrow Comment */ .hljs-comment, .hljs-quote { color: #8e908c; } /* Tomorrow Red */ .hljs-variable, .hljs-template-variable, .hljs-tag, .hljs-name, .hljs-selector-id, .hljs-selector-class, .hljs-regexp, .hljs-deletion { color: #c82829; } /* Tomorrow Orange */ .hljs-number, .hljs-built_in, .hljs-builtin-name, .hljs-literal, .hljs-type, .hljs-params, .hljs-meta, .hljs-link { color: #f5871f; } /* Tomorrow Yellow */ .hljs-attribute { color: #eab700; } /* Tomorrow Green */ .hljs-string, .hljs-symbol, .hljs-bullet, .hljs-addition { color: #718c00; } /* Tomorrow Blue */ .hljs-title, .hljs-section { color: #4271ae; } /* Tomorrow Purple */ .hljs-keyword, .hljs-selector-tag { color: #8959a8; } .hljs { display: block; overflow-x: auto; color: #4d4d4c; padding: 0.5em; } .hljs-emphasis { font-style: italic; } .hljs-strong { font-weight: bold; }
+</style>
+<style>
+ul.contains-task-list { padding-left: 0; } ul ul.contains-task-list { padding-left: 40px; } .task-list-item { list-style-type: none; } .task-list-item-checkbox { vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'HelveticaNeue-Light', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="job-board">Job Board</h1>
+<h2 id="overview">Overview</h2>
+<p>As a newly-minted software consultant, you've been tasked with expanding upon a job posting application. This repo contains a skeleton codebase for the product. Jobby Jobs is a small company that advertises household job services and assigns the jobs to college students. It is currently a manual process:</p>
+<ol>
+<li>Job posters call a phone number.</li>
+<li>The receptionist takes down the information.</li>
+<li>The receptionist enters it in the JerbyJerbs application.</li>
+<li>JerbyJerbs staff manually match up posted jobs to job doers.</li>
+</ol>
+<p>This is a multi-phased engagement. The goal of this phase is to build upon the existing code to support the job posting process.</p>
+<h2 id="instructions">Instructions</h2>
+<p>The client has booked 2-4 hours of your time to complete the following:</p>
+<ul>
+<li>Implement the Required Task (see below) first.</li>
+<li>Afterwards, choose two of the Available Tasks to implement. Clearly communicate which tasks you have implemented, so current and future developers are aware.</li>
+</ul>
+<p>Select the tasks that you feel best demonstrate your level of ability, or that best reflect your interests.</p>
+<p>You may add any tool, framework, or technology to complete the task. The existing code may be modified in any way necessary to achieve your goal. However, you must ensure that all existing functionality remains intact. Please feel free to ask questions about the project with other Gnar Team Members.</p>
+<p>Submit the results of your three completed tasks as a Pull Request for the team to review.</p>
+<h2 id="required-task">Required Task</h2>
+<ol start="101">
+<li>Associate locations in the system with a region so that JerbyJerbs can easily segment job postings across a state. Modify the system so that when creating a location, you can specify the region the location is associated with, and show the name of that region on the location's show page. While it's not needed anywhere in the application, ensure it's easy to group all locations by region.</li>
+</ol>
+<h2 id="available-tasks">Available Tasks</h2>
+<ol start="201">
+<li>When creating a new job posting, require the description to be set before saving.</li>
+<li>Re-implement the front-end for viewing all jobs and creating a new job using a JS framework like React, Vue, Elm, or Angular.</li>
+<li>Job searchers are looking to view jobs on their phone, and the current UI is lacking in supporting that. Update the UI for mobile display on the job posting index page. Focus only on this page.</li>
+<li>New jobs are of particular interest to the client. Generate a CSV report for their consumption that lists all new jobs in the system. A new job is defined as any job that was created yesterday. This report should be generated automatically every day at 9am Eastern Time.</li>
+<li>With so many jobs in the system, users are now experiencing poor loading times for the index page, and are also finding it difficult to find jobs available to them. Address those concerns by implementing the following:</li>
+</ol>
+<pre><code>* Display no more than 10 jobs at a time on the page, while still allowing access to all jobs in the system.
+* Allow users to sort and/or filter the jobs by the status column.
+</code></pre>
+<ol start="206">
+<li>Allow users to easily find jobs posted by a particular person by implementing a search feature, that will find all jobs posted by the user searched for, either by first name or last name.</li>
+<li>Report at the top of the index page, above the listing of jobs, how many pending jobs there are in each category.</li>
+<li>When viewing the details of a particular job, use the location to generate a map which clearly shows where the posting is for.</li>
+<li>On the form to create a location, use Google Places or another API to validate and auto-complete the address as it is being typed.</li>
+<li>Implement an authentication system using something like Devise or JWT and use it to ensure that users must log in before creating or editing a job posting.</li>
+<li>When viewing the details of a particular job, link to other nearby jobs as well. A &quot;nearby&quot; job may be one that's in the same city, or any other heuristic of your choosing.</li>
+<li>Allow a user looking at the list of job postings to specify a particular category of interest, perhaps through a dropdown list. Once that category is set, bold each row in the job postings list that is associated with that category.</li>
+<li>Job posters would like to associate multiple categories to a given job posting. Update the application so that a job posting may be related to any number of categories. Display all categories for a given posting on the job postings listing page.</li>
+</ol>
+<h2 id="getting-started">Getting Started</h2>
+<p>Install:</p>
+<ul>
+<li><a href="https://freedesktop.org/wiki/Software/pkg-config/">pkg-config</a></li>
+<li><a href="https://cmake.org/">CMake</a></li>
+<li><a href="https://sites.google.com/a/chromium.org/chromedriver/downloads">Chromedriver</a></li>
+</ul>
+<p>You can install these on OS X with <a href="https://brew.sh/">homebrew</a> by running:</p>
+<pre><code class="language-shell">brew bundle
+</code></pre>
+<p>The skeleton app contains enough dependencies to satisfy the current functionality, but feel free to add more.</p>
+<pre><code class="language-shell">$ bundle install
+$ bundle exec rake db:create
+$ bundle exec rake db:migrate
+$ bundle exec rails s
+$ open http://localhost:3000
+</code></pre>
+<h2 id="testing">Testing</h2>
+<p>The repo is configured with rspec, and includes tests in place for existing functionality.</p>
+<p>To run the full test suite:</p>
+<pre><code class="language-shell">$ bundle exec rake
+</code></pre>
+<p>To run all tests in a specific file:</p>
+<pre><code class="language-shell">$ bundle exec rspec spec/models/job_posting_spec.rb
+</code></pre>
+<p>To run a specific test, or group of tests, within a file:</p>
+<pre><code class="language-shell">$ bundle exec rspec spec/models/job_posting_spec.rb:12
+</code></pre>
+<h3 id="chrome-headless">Chrome Headless</h3>
+<p>Capybara is configured to run with Chrome Headless as the driver. In order to run Chrome Headless, you must have Chrome installed and also ChromeDriver.</p>
+<p>On OS X, you may install ChromeDriver via homebrew <code>brew install chromedriver</code>.</p>
+<h3 id="switching-out-capybara-driver">Switching out Capybara Driver</h3>
+<p>If you'd like to not run your tests headless, for example, to troubleshoot an issue and see what's on the screen, modify the <code>driven_by</code> driver in <code>spec/support/system_test_configuration.rb</code> to use <code>:selenium_chrome</code> instead of <code>:selenium_chrome_headless</code>. After the change, this block should look as follows:</p>
+<pre class="hljs"><code><div>config.before(<span class="hljs-symbol">:each</span>, <span class="hljs-symbol">type:</span> <span class="hljs-symbol">:system</span>, <span class="hljs-symbol">js:</span> <span class="hljs-literal">true</span>) <span class="hljs-keyword">do</span>
+  driven_by <span class="hljs-symbol">:selenium_chrome</span>
+<span class="hljs-keyword">end</span>
+
+</div></code></pre>
+<h2 id="javascript-framework-integration">JavaScript Framework Integration</h2>
+<h3 id="react">React</h3>
+<p>Use React by adding <code>&lt;%= javascript_pack_tag 'hello_react' %&gt;</code> to the head of your layout file,
+like <code>app/views/layouts/application.html.erb</code>. All it does is render <code>&lt;div&gt;Hello React&lt;/div&gt;</code> at the bottom
+of the page.</p>
+<h3 id="angular">Angular</h3>
+<p>Use Angular by adding the following HTML markup to your view:</p>
+<pre><code><hello-angular>Loading...</hello-angular>
+
+<%= javascript_pack_tag 'hello_angular' %>
+</code></pre>
+<h3 id="elm">Elm</h3>
+<p>Use Elm by adding <code>&lt;%= javascript_pack_tag &quot;hello_elm&quot; %&gt;</code> to the head of your layout
+file, like <code>app/views/layouts/application.html.erb</code>. It will render &quot;Hello Elm!&quot; within the page.</p>
+<h3 id="vue">Vue</h3>
+<p>Use Vue by adding <code>&lt;%= javascript_pack_tag 'hello_vue' %&gt;</code> to the head of your layout file, like <code>app/views/layouts/application.html.erb</code>. All it does is render <code>&lt;div&gt;Hello Vue&lt;/div&gt;</code> at the bottom of the page.</p>
+<p>The above code uses Vue without the compiler, which means you cannot
+use Vue to target elements in your existing html templates. You would
+need to always use single file components.
+To be able to target elements in your existing html/erb templates,
+comment out the above code and uncomment the below
+Add <code>&lt;%= javascript_pack_tag 'hello_vue' %&gt;</code> to your layout
+Then add this markup to your html template:</p>
+<pre><code><div id='hello'>
+  {{message}}
+  <app></app>
+</div>
+</code></pre>
+<pre><code>import Vue from 'vue/dist/vue.esm'
+import App from './app.vue'
+
+document.addEventListener('DOMContentLoaded', () => {
+   const app = new Vue({
+     el: '#hello',
+     data: {
+       message: "Can you say hello?"
+     },
+     components: { App }
+   })
+ })
+</code></pre>
+
+    </body>
+    </html>

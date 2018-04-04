@@ -1,0 +1,54 @@
+en:
+  locations:
+    form:
+      create: Add Location
+    location_heading:
+      title: Location
+    show:
+      name: Name
+      street_address_1: Street Address 1
+      steet_address_2: Street Address 2
+      city: City
+      state: State
+      zip_code: Zip Code
+  job_postings:
+    form:
+      category_prompt: Select Category
+      create: Add Job
+      location_prompt: Select Location
+      poster_prompt: Select Job Poster
+      update: Update Job
+    index:
+      action:
+        edit: Edit
+        new_job: Add New Job
+        new_location: Add New Location
+        view: View
+      actions: Actions
+      category: Category
+      location: Location
+      poster: Poster
+      posting_date: Date
+      status: Status
+      job_title: Title
+      title: Job Postings
+    posting_heading:
+      action:
+        back: View All Job Postings
+      title: Job Posting
+    show:
+      action:
+        edit: Edit Job
+      category: Category
+      description: Description
+      location: Location
+      poster: Poster
+      posting_date: Date
+      status: Status
+      title: Title
+  layouts:
+    application:
+      title: JerbBoard
+  time:
+    formats:
+      short: "%m/%d/%Y"
