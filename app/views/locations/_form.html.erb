@@ -15,6 +15,11 @@
   </div>
 
   <div class="field_with_errors">
+    <%= form.label(:region, for: :location_region) %>
+    <%= form.text_field(:region, id: :location_region, class: "form-control") %>
+  </div>
+
+  <div class="field_with_errors">
     <%= form.label(:street_address_1, for: :location_street_address_1) %>
     <%= form.text_field(:street_address_1, id: :location_street_address_1, class: "form-control") %>
   </div>

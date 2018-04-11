@@ -1,12 +1,12 @@
 # Job Board
 
 ## Overview
-As a newly-minted software consultant, you've been tasked with expanding upon a job posting application. This repo contains a skeleton codebase for the product. Jobby Jobs is a small company that advertises household job services and assigns the jobs to college students. It is currently a manual process:
+As a newly-minted software consultant, you've been tasked with expanding upon a job posting application. This repo contains a skeleton codebase for the product. JobbyJobs is a small company that advertises household job services and assigns the jobs to college students. It is currently a manual process:
 
 1. Job posters call a phone number.
 2. The receptionist takes down the information.
-3. The receptionist enters it in the JerbyJerbs application.
-4. JerbyJerbs staff manually match up posted jobs to job doers.
+3. The receptionist enters it in the JobbyJobs application.
+4. JobbyJobs staff manually match up posted jobs to job doers.
 
 This is a multi-phased engagement. The goal of this phase is to build upon the existing code to support the job posting process.
 
@@ -19,13 +19,13 @@ The client has booked 2-4 hours of your time to complete the following:
 
 Select the tasks that you feel best demonstrate your level of ability, or that best reflect your interests.
 
-You may add any tool, framework, or technology to complete the task. The existing code may be modified in any way necessary to achieve your goal. However, you must ensure that all existing functionality remains intact. Please feel free to ask questions about the project with other Gnar Team Members.
+You may add any tool, framework, or technology to complete the task. The existing code may be modified in any way necessary to achieve your goal. However, you must ensure that all existing functionality remains intact. Please feel free to ask questions about the project with other members.
 
 Submit the results of your three completed tasks as a Pull Request for the team to review.
 
 ## Required Task
 
-101. Associate locations in the system with a region so that JerbyJerbs can easily segment job postings across a state. Modify the system so that when creating a location, you can specify the region the location is associated with, and show the name of that region on the location's show page. While it's not needed anywhere in the application, ensure it's easy to group all locations by region.
+101. Associate locations in the system with a region so that JobbyJobs can easily segment job postings across a state. Modify the system so that when creating a location, you can specify the region the location is associated with, and show the name of that region on the location's show page. While it's not needed anywhere in the application, ensure it's easy to group all locations by region.
 
 ## Available Tasks
 

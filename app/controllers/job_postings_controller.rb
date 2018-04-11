@@ -1,6 +1,5 @@
 class JobPostingsController < ApplicationController
   before_action :set_job_posting, only: [:edit, :show]
-
   def create
     @job_posting = JobPosting.new(job_posting_params)
 
